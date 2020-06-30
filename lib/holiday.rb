@@ -80,10 +80,12 @@ end
   #   Fourth Of July: Fireworks, BBQ
   # etc.
 def all_holidays_with_bbq(holiday_hash)
-  holiday_hash.each do |season, holiday|
-    holiday.each do |value, attribute|
-    if attribute == "BBQ"
-      return attribute
+  # return an array of holiday names (as symbols) where supply lists
+  # include the string "BBQ"
+  
+  holiday_hash.map do |season, holidays|
+    holidays.map do |holiday, supplies|
+      holiday if supplies.include?("BBQ")
     end
-  end
+  end.flatten.compact
 end

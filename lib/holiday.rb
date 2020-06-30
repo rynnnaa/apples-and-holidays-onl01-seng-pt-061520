@@ -81,7 +81,7 @@ end
   # etc.
 def all_holidays_with_bbq(holiday_hash)
   holiday_hash.each do |season, holiday|
-    holiday.each |value, attribute|
+    holiday.each do |value, attribute|
     if attribute == "BBQ"
       return attribute
     end

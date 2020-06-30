@@ -84,6 +84,5 @@ def all_holidays_with_bbq(holiday_hash)
     holiday.each |value, attribute|
     if attribute == "BBQ"
       return
-    end
   end
 end
